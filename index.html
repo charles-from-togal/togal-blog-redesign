@@ -39,15 +39,27 @@ nav {
   cursor: pointer;
 }
 
+/* ── MAX WIDTH CONTAINER ── */
+.site-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 /* ── BLOG HEADER ── */
 .blog-header {
   background: #f0f2f0;
-  padding: 3rem 3rem 2.5rem;
+  padding: 3rem 0 2.5rem;
+  border-bottom: 1px solid #e0e4df;
+}
+.blog-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: center;
-  border-bottom: 1px solid #e0e4df;
 }
 .blog-eyebrow {
   font-size: 10px;
@@ -84,7 +96,12 @@ nav {
 /* ── FEATURED HERO ── */
 .featured-wrap {
   background: #26294e;
-  padding: 3rem 3rem 0;
+  padding: 3rem 0 0;
+}
+.featured-wrap-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
 }
 
 .feat-eyebrow {
@@ -209,8 +226,13 @@ nav {
 /* ── FILTER TABS ── */
 .filter-bar {
   background: #fff;
-  padding: 1.5rem 3rem 0;
   border-bottom: 1px solid #e8eaee;
+  padding: 0;
+}
+.filter-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 3rem 0;
   display: flex;
   align-items: center;
   gap: 0;
@@ -231,7 +253,8 @@ nav {
 .filter-tab.active { color: #26294e; border-bottom-color: #3ab65a; }
 
 /* ── CONTENT BODY ── */
-.content-body { padding: 2.5rem 3rem; background: #fff; }
+.content-body { background: #fff; padding: 2.5rem 0; }
+.content-body-inner { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
 
 .section-row {
   display: flex;
@@ -299,13 +322,10 @@ nav {
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    -45deg,
-    rgba(255,255,255,0.02) 0px,
-    rgba(255,255,255,0.02) 1px,
-    transparent 1px,
-    transparent 14px
-  );
+  background:
+    linear-gradient(rgba(58,182,90,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(58,182,90,0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 .card-img-placeholder::after {
   content: '';
@@ -445,11 +465,15 @@ nav {
 /* ── FOOTER ── */
 footer {
   background: #26294e;
+  margin-top: 2.5rem;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 1.75rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2.5rem;
 }
 .footer-logo { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.9); }
 .footer-logo span { color: #3ab65a; }
@@ -465,7 +489,8 @@ footer {
   background: #3ab65a;
   margin: 0;
 }
-.article-page { background: #f7f8f6; padding: 2.5rem 3rem; }
+.article-page { background: #f7f8f6; padding: 2.5rem 0; }
+.article-page-inner { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
 .article-breadcrumb {
   display: flex;
   align-items: center;
@@ -746,15 +771,18 @@ footer {
 
 <!-- BLOG HEADER -->
 <div class="blog-header">
-  <div>
-    <div class="blog-eyebrow"><span class="blog-eyebrow-dot"></span>Blog</div>
-    <h1>Construction<br>Technology Blog</h1>
+  <div class="blog-header-inner">
+    <div>
+      <div class="blog-eyebrow"><span class="blog-eyebrow-dot"></span>Blog</div>
+      <h1>Construction<br>Technology Blog</h1>
+    </div>
+    <p class="blog-header-desc">Practical guides, case studies, and industry analysis for estimators and pre-construction teams navigating AI-powered takeoff.</p>
   </div>
-  <p class="blog-header-desc">Practical guides, case studies, and industry analysis for estimators and pre-construction teams navigating AI-powered takeoff.</p>
 </div>
 
 <!-- FEATURED HERO -->
 <div class="featured-wrap">
+  <div class="featured-wrap-inner">
   <div class="feat-eyebrow">Featured story</div>
   <div class="feat-kicker">Case Study</div>
   <h2 class="feat-title">How Consigli scaled estimating <em>across 80–100 estimators</em> without losing accuracy</h2>
@@ -789,17 +817,20 @@ footer {
   </div>
 </div>
 
+  </div><!-- /featured-wrap-inner -->
 <!-- FILTER TABS -->
 <div class="filter-bar">
-  <a class="filter-tab active" href="#">All</a>
-  <a class="filter-tab" href="#">Case Studies</a>
-  <a class="filter-tab" href="#">Guides</a>
-  <a class="filter-tab" href="#">Industry</a>
-  <a class="filter-tab" href="#">Product</a>
+  <div class="filter-bar-inner">
+    <a class="filter-tab active" href="#">All</a>
+    <a class="filter-tab" href="#">Case Studies</a>
+    <a class="filter-tab" href="#">Guides</a>
+    <a class="filter-tab" href="#">Industry</a>
+    <a class="filter-tab" href="#">Product</a>
+  </div>
 </div>
 
 <!-- CONTENT BODY -->
-<div class="content-body">
+<div class="content-body"><div class="content-body-inner">
 
   <div class="section-row">
     <span class="section-label">Guides &amp; How-Tos</span>
@@ -905,7 +936,7 @@ footer {
     </div>
   </div>
 
-</div>
+</div></div>
 
 <footer>
   <span style="font-size:13px;font-weight:700;letter-spacing:0.04em;color:rgba(255,255,255,0.85);font-family:'Poppins',sans-serif;">TOGAL<span style="color:#3ab65a;">.AI</span></span>
@@ -915,6 +946,7 @@ footer {
     <a href="#">Contact</a>
   </div>
   <div class="footer-copy">© 2026 Togal.AI</div>
+  </div>
 </footer>
 
 
@@ -945,7 +977,7 @@ footer {
   <button class="demo-btn">Get a demo</button>
 </nav>
 
-<div class="article-page" id="article">
+<div class="article-page" id="article"><div class="article-page-inner">
   <div class="article-breadcrumb">
     <a href="#">Blog</a>
     <span class="bc-sep">›</span>
@@ -1072,6 +1104,7 @@ footer {
     <a href="#">Contact</a>
   </div>
   <div class="footer-copy">© 2026 Togal.AI</div>
+  </div>
 </footer>
 
 </body>
