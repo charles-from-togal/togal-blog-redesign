@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Togal.AI — Blog (Redesign Concept v2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Poppins', sans-serif; background: #fff; color: #26294e; -webkit-font-smoothing: antialiased; }
+
+/* ── NAV ── */
+nav {
+  background: #26294e;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo { font-size: 16px; font-weight: 700; color: #fff; letter-spacing: 0.02em; }
+.logo span { color: #3ab65a; }
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a { font-size: 12.5px; color: rgba(255,255,255,0.6); text-decoration: none; }
+.nav-links a:hover { color: #fff; }
+.demo-btn {
+  background: #3ab65a;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ── MAX WIDTH CONTAINER ── */
+.site-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── BLOG HEADER ── */
+.blog-header {
+  background: #f0f2f0;
+  padding: 3rem 0 2.5rem;
+  border-bottom: 1px solid #e0e4df;
+}
+.blog-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.blog-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #3ab65a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.75rem;
+}
+.blog-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3ab65a;
+  display: inline-block;
+}
+.blog-header h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #26294e;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+.blog-header-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #525252;
+  max-width: 420px;
+}
+
+/* ── FEATURED HERO ── */
+.featured-wrap {
+  background: #26294e;
+  padding: 3rem 0 0;
+}
+.featured-wrap-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.feat-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #3ab65a;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.75rem;
+}
+.feat-eyebrow::after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: rgba(58,182,90,0.45);
+}
+.feat-kicker {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3ab65a;
+  background: rgba(58,182,90,0.12);
+  padding: 4px 10px;
+  border-radius: 3px;
+  margin-bottom: 1.1rem;
+}
+.feat-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #fff;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  max-width: 680px;
+}
+.feat-title em { font-weight: 300; font-style: italic; color: #8ecfaa; }
+.feat-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.55);
+  max-width: 520px;
+  margin-bottom: 1.75rem;
+}
+.feat-stats {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.75rem;
+  max-width: 540px;
+}
+.feat-stat {
+  flex: 1;
+  padding: 1.1rem 1.5rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.feat-stat:first-child { border-radius: 6px 0 0 6px; }
+.feat-stat:last-child { border-radius: 0 6px 6px 0; }
+.feat-stat + .feat-stat { border-left: none; }
+.feat-stat-num {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #3ab65a;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+.feat-stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.38);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+.feat-bottom {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1.5rem 0 2.5rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.feat-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.feat-meta-item { font-size: 11.5px; color: rgba(255,255,255,0.38); }
+.feat-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,0.2); display: inline-block; }
+.feat-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #3ab65a;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.feat-pullquote {
+  border-left: 2px solid rgba(58,182,90,0.35);
+  padding-left: 14px;
+  margin-left: auto;
+  max-width: 300px;
+}
+.feat-pullquote p {
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.5);
+  font-style: italic;
+}
+.feat-pullquote cite {
+  display: block;
+  margin-top: 6px;
+  font-size: 10.5px;
+  color: rgba(255,255,255,0.27);
+  font-style: normal;
+}
+
+/* ── FILTER TABS ── */
+.filter-bar {
+  background: #fff;
+  border-bottom: 1px solid #e8eaee;
+  padding: 0;
+}
+.filter-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 3rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.filter-tab {
+  font-size: 13px;
+  font-weight: 600;
+  color: #707f7e;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+  letter-spacing: 0.01em;
+}
+.filter-tab:hover { color: #26294e; }
+.filter-tab.active { color: #26294e; border-bottom-color: #3ab65a; }
+
+/* ── CONTENT BODY ── */
+.content-body { background: #fff; padding: 2.5rem 0; }
+.content-body-inner { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
+
+.section-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #26294e;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid #26294e;
+}
+.section-all {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #3ab65a;
+  text-decoration: none;
+}
+
+/* ── CARD GRID ── */
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem; }
+
+.card {
+  background: #fff;
+  border: 1px solid #e8eaee;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.15s;
+  display: flex;
+  flex-direction: column;
+}
+.card:hover { box-shadow: 0 6px 24px rgba(38,41,78,0.09); transform: translateY(-2px); }
+
+.card-img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+/* Placeholder image using CSS patterns */
+.card-img-placeholder {
+  height: 175px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.cip-1 { background: #1a2a4a; }
+.cip-2 { background: #0d3320; }
+.cip-3 { background: #2a1a3a; }
+.cip-4 { background: #1a3330; }
+.cip-5 { background: #2a2a1a; }
+.cip-6 { background: #1a1a2a; }
+
+.card-img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(58,182,90,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(58,182,90,0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.card-img-placeholder::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60%;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+}
+.cip-label {
+  position: relative;
+  z-index: 1;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+.card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+
+.card-tag {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: inline-block;
+}
+.t-cs { color: #114a2a; }
+.t-guide { color: #26294e; }
+.t-insight { color: #3a3520; }
+.t-news { color: #2e1f5a; }
+
+.card-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.42;
+  color: #26294e;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+  flex: 1;
+}
+.card-desc {
+  font-size: 12px;
+  line-height: 1.68;
+  color: #525252;
+  margin-bottom: 0.9rem;
+}
+.card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.8rem;
+  border-top: 1px solid #f0f1f6;
+  margin-top: auto;
+}
+.read-time { font-size: 10.5px; color: #b0b4c0; letter-spacing: 0.02em; }
+.card-cta { font-size: 11.5px; font-weight: 600; color: #3ab65a; }
+
+/* ── LIST SECTION ── */
+.list-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 3rem; }
+.list-card {
+  background: #fff;
+  border: 1px solid #e8eaee;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 1rem;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.list-card:hover { border-color: #707f7e; }
+.list-num {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #e8eaee;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  padding-top: 3px;
+}
+.list-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.42;
+  color: #26294e;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.01em;
+}
+.list-desc { font-size: 11.5px; line-height: 1.65; color: #525252; margin-bottom: 0.5rem; }
+.list-meta { font-size: 10px; color: #b0b4c0; }
+
+/* ── NEWSLETTER ── */
+.newsletter {
+  background: #114a2a;
+  border-radius: 8px;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 0;
+}
+.newsletter h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 5px;
+  letter-spacing: -0.01em;
+}
+.newsletter p { font-size: 12px; color: rgba(255,255,255,0.48); }
+.nl-form { display: flex; gap: 8px; flex-shrink: 0; }
+.nl-input {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 4px;
+  padding: 9px 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: #fff;
+  width: 210px;
+  outline: none;
+}
+.nl-input::placeholder { color: rgba(255,255,255,0.32); }
+.nl-btn {
+  background: #3ab65a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 9px 18px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: #26294e;
+  margin-top: 2.5rem;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.75rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-logo { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.9); }
+.footer-logo span { color: #3ab65a; }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 11px; color: rgba(255,255,255,0.35); text-decoration: none; }
+.footer-copy { font-size: 11px; color: rgba(255,255,255,0.25); }
+
+/* ─────────────────────────────
+   ARTICLE TEMPLATE (below fold)
+───────────────────────────── */
+.article-divider {
+  height: 6px;
+  background: #3ab65a;
+  margin: 0;
+}
+.article-page { background: #f7f8f6; padding: 2.5rem 0; }
+.article-page-inner { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
+.article-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: #707f7e;
+  margin-bottom: 2rem;
+}
+.article-breadcrumb a { color: #707f7e; text-decoration: none; }
+.article-breadcrumb a:hover { color: #3ab65a; }
+.bc-sep { color: #c0c4cc; font-size: 10px; }
+
+.article-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Main content */
+.article-main {}
+.article-category-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #114a2a;
+  background: #e3f4ea;
+  padding: 4px 10px;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
+.article-title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #26294e;
+  letter-spacing: -0.025em;
+  margin-bottom: 1rem;
+}
+.article-lede {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #525252;
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+  max-width: 580px;
+}
+.article-meta-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid #e0e4df;
+  border-bottom: 1px solid #e0e4df;
+  margin-bottom: 2rem;
+}
+.art-meta-item { font-size: 11.5px; color: #707f7e; }
+.art-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: #c8ccd4; }
+
+.article-hero-img {
+  width: 100%;
+  height: 340px;
+  background: linear-gradient(135deg, #1a2a4a 0%, #0d3320 60%, #1a2a1a 100%);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.article-hero-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(58,182,90,0.04) 0px,
+    rgba(58,182,90,0.04) 1px,
+    transparent 1px,
+    transparent 16px
+  );
+}
+.article-hero-img-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.article-body { font-size: 15px; line-height: 1.8; color: #3a3d50; }
+.article-body p { margin-bottom: 1.5rem; }
+.article-body h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #26294e;
+  letter-spacing: -0.015em;
+  margin: 2.5rem 0 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e8eaee;
+}
+.article-body h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #26294e;
+  margin: 1.75rem 0 0.75rem;
+}
+.article-body strong { color: #26294e; font-weight: 600; }
+.article-body ul { padding-left: 1.25rem; margin-bottom: 1.5rem; }
+.article-body ul li { margin-bottom: 0.5rem; color: #3a3d50; }
+
+.article-pullquote {
+  margin: 2rem 0;
+  padding: 1.5rem 1.75rem;
+  background: #f0f4f1;
+  border-left: 3px solid #3ab65a;
+  border-radius: 0 6px 6px 0;
+}
+.article-pullquote p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #26294e;
+  font-weight: 600;
+  font-style: italic;
+  margin: 0 0 0.5rem;
+}
+.article-pullquote cite {
+  font-size: 11px;
+  color: #707f7e;
+  font-style: normal;
+}
+
+.article-stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.article-stat-card {
+  background: #fff;
+  border: 1px solid #e8eaee;
+  border-radius: 7px;
+  padding: 1.25rem;
+  text-align: center;
+}
+.art-stat-num {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #3ab65a;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.art-stat-label {
+  font-size: 11px;
+  color: #707f7e;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
+/* Sidebar */
+.article-sidebar { position: sticky; top: 74px; }
+
+.sidebar-card {
+  background: #fff;
+  border: 1px solid #e8eaee;
+  border-radius: 8px;
+  padding: 1.35rem;
+  margin-bottom: 1.25rem;
+}
+.sidebar-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b0b4c0;
+  margin-bottom: 0.85rem;
+}
+.sidebar-card p {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: #525252;
+  margin-bottom: 1rem;
+}
+.sidebar-cta-btn {
+  display: block;
+  background: #26294e;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.sidebar-cta-btn:hover { background: #3ab65a; }
+.sidebar-cta-btn.green { background: #3ab65a; }
+.sidebar-cta-btn.green:hover { background: #2e9a4a; }
+
+.related-post {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f1f6;
+  cursor: pointer;
+}
+.related-post:last-child { border-bottom: none; padding-bottom: 0; }
+.related-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3ab65a;
+  margin-bottom: 3px;
+}
+.related-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.38;
+  color: #26294e;
+}
+.related-title:hover { color: #3ab65a; }
+.related-meta { font-size: 10px; color: #b0b4c0; margin-top: 3px; }
+
+.toc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 12.5px;
+  color: #525252;
+  cursor: pointer;
+  border-bottom: 1px solid #f5f6f8;
+}
+.toc-item:last-child { border-bottom: none; }
+.toc-item:hover { color: #3ab65a; }
+.toc-num { font-size: 10px; color: #b0b4c0; font-weight: 600; padding-top: 2px; flex-shrink: 0; }
+
+/* Page label */
+.page-label {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  padding: 1.5rem;
+  background: #26294e;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div style="display:flex;align-items:center;gap:7px;">
+  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2 2h4v2H4v4H2V2zm14 0h4v6h-2V4h-2V2zM2 14h2v4h4v2H2v-6zm16 4h-4v2h6v-6h-2v4z" fill="#3ab65a"/>
+    <rect x="5" y="5" width="12" height="12" rx="1" stroke="#114a2a" stroke-width="1.5" fill="none"/>
+    <rect x="8" y="8" width="2.5" height="6" fill="#114a2a"/>
+    <rect x="11.5" y="8" width="2.5" height="6" fill="#114a2a"/>
+    <rect x="8" y="8" width="6" height="2" fill="#114a2a"/>
+  </svg>
+  <span style="font-size:15px;font-weight:700;letter-spacing:0.04em;color:#fff;font-family:'Poppins',sans-serif;">TOGAL<span style="color:#3ab65a;">.AI</span></span>
+</div>
+  <div class="nav-links">
+    <a href="#">Features</a>
+    <a href="#">Trades</a>
+    <a href="#">Resources</a>
+    <a href="#">Pricing</a>
+  </div>
+  <button class="demo-btn">Get a demo</button>
+</nav>
+
+<!-- BLOG HEADER -->
+<div class="blog-header">
+  <div class="blog-header-inner">
+    <div>
+      <div class="blog-eyebrow"><span class="blog-eyebrow-dot"></span>Blog</div>
+      <h1>Construction<br>Technology Blog</h1>
+    </div>
+    <p class="blog-header-desc">Practical guides, case studies, and industry analysis for estimators and pre-construction teams navigating AI-powered takeoff.</p>
+  </div>
+</div>
+
+<!-- FEATURED HERO -->
+<div class="featured-wrap">
+  <div class="featured-wrap-inner">
+  <div class="feat-eyebrow">Featured story</div>
+  <div class="feat-kicker">Case Study</div>
+  <h2 class="feat-title">How Consigli scaled estimating <em>across 80–100 estimators</em> without losing accuracy</h2>
+  <p class="feat-desc">A fifth-generation GC managing $4B+ in annual volume needed every estimator in the same environment — regardless of office or project. Here's how they got there.</p>
+  <div class="feat-stats">
+    <div class="feat-stat">
+      <div class="feat-stat-num">$4B+</div>
+      <div class="feat-stat-label">Annual construction volume</div>
+    </div>
+    <div class="feat-stat">
+      <div class="feat-stat-num">80–100</div>
+      <div class="feat-stat-label">Estimators on one platform</div>
+    </div>
+    <div class="feat-stat">
+      <div class="feat-stat-num">15+</div>
+      <div class="feat-stat-label">Offices across North America</div>
+    </div>
+  </div>
+  <div class="feat-bottom">
+    <div class="feat-meta">
+      <span class="feat-meta-item">Enterprise</span>
+      <span class="feat-dot"></span>
+      <span class="feat-meta-item">5 min read</span>
+      <span class="feat-dot"></span>
+      <span class="feat-meta-item">General Contractor</span>
+    </div>
+    <a href="#article" class="feat-cta">Read the full story →</a>
+    <div class="feat-pullquote">
+      <p>"We really see web-based applications as the wave of the future."</p>
+      <cite>Tim Ericson, Chief Estimator — Consigli Construction</cite>
+    </div>
+  </div>
+</div>
+
+  </div><!-- /featured-wrap-inner -->
+<!-- FILTER TABS -->
+<div class="filter-bar">
+  <div class="filter-bar-inner">
+    <a class="filter-tab active" href="#">All</a>
+    <a class="filter-tab" href="#">Case Studies</a>
+    <a class="filter-tab" href="#">Guides</a>
+    <a class="filter-tab" href="#">Industry</a>
+    <a class="filter-tab" href="#">Product</a>
+  </div>
+</div>
+
+<!-- CONTENT BODY -->
+<div class="content-body"><div class="content-body-inner">
+
+  <div class="section-row">
+    <span class="section-label">Guides &amp; How-Tos</span>
+    <a href="#" class="section-all">View all →</a>
+  </div>
+  <div class="grid3">
+    <div class="card">
+      <div class="card-img-placeholder cip-2"><span class="cip-label">Estimating workflow</span></div>
+      <div class="card-body">
+        <span class="card-tag t-guide">Guide</span>
+        <h3 class="card-title">How To Never Miss Scope: 3 Patterns Every Estimator Should Check</h3>
+        <p class="card-desc">Three pattern checks that top estimators use to validate takeoffs, catch scope gaps early, and bid with confidence.</p>
+        <div class="card-foot">
+          <span class="read-time">5–6 min read</span>
+          <span class="card-cta">Read →</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img-placeholder cip-3"><span class="cip-label">AI takeoff evaluation</span></div>
+      <div class="card-body">
+        <span class="card-tag t-guide">Guide</span>
+        <h3 class="card-title">Better Takeoffs, Better Workdays: How AI Takeoff Software Reduces Estimator Burnout</h3>
+        <p class="card-desc">Five questions to ask when evaluating AI takeoff software — and how the right choice helps estimators focus on high-value work.</p>
+        <div class="card-foot">
+          <span class="read-time">4–5 min read</span>
+          <span class="card-cta">Read →</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img-placeholder cip-4"><span class="cip-label">Multi-unit projects</span></div>
+      <div class="card-body">
+        <span class="card-tag t-guide">Guide</span>
+        <h3 class="card-title">Repeating Groups: Stop Taking Off the Same Room Twice</h3>
+        <p class="card-desc">Measure once, apply everywhere. How Togal's Repeating Groups eliminates the most repetitive work in hotel and multi-unit estimating.</p>
+        <div class="card-foot">
+          <span class="read-time">4 min read</span>
+          <span class="card-cta">Read →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-row">
+    <span class="section-label">Industry &amp; AI</span>
+    <a href="#" class="section-all">View all →</a>
+  </div>
+  <div class="grid2" style="margin-bottom:1rem;">
+    <div class="card">
+      <div class="card-img-placeholder cip-5" style="height:145px;"><span class="cip-label">Construction technology</span></div>
+      <div class="card-body">
+        <span class="card-tag t-insight">Industry</span>
+        <h3 class="card-title">AI or BS? What's Actually Real in Construction AI</h3>
+        <p class="card-desc">Ten practical ways to spot real AI utility, avoid AI theater, and protect your margins on every bid.</p>
+        <div class="card-foot">
+          <span class="read-time">5–7 min read</span>
+          <span class="card-cta">Read →</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img-placeholder cip-6" style="height:145px;"><span class="cip-label">Cloud collaboration</span></div>
+      <div class="card-body">
+        <span class="card-tag t-insight">Industry</span>
+        <h3 class="card-title">Construction Takeoffs with AI: Speed and Accuracy Combined</h3>
+        <p class="card-desc">How AI-assisted takeoff automates measurements, reduces manual tracing, and cuts bid completion time by up to 80%.</p>
+        <div class="card-foot">
+          <span class="read-time">7–9 min read</span>
+          <span class="card-cta">Read →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="list-grid" style="margin-bottom:3rem;">
+    <div class="list-card">
+      <div class="list-num">03</div>
+      <div>
+        <div class="list-title">In the Race to Patent AI-Assisted Takeoff, Togal.AI Is Already There</div>
+        <div class="list-desc">Five patents secured, six pending — reinforcing Togal's position in preconstruction automation.</div>
+        <div class="list-meta">3–4 min · News</div>
+      </div>
+    </div>
+    <div class="list-card">
+      <div class="list-num">04</div>
+      <div>
+        <div class="list-title">Cloud Takeoff Software for Construction Teams (And Why It Matters Now)</div>
+        <div class="list-desc">Speed up bids by 75% using AI-assisted quantity generation and real-time team collaboration.</div>
+        <div class="list-meta">6–8 min · Industry</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter">
+    <div>
+      <h3>Stay current on construction technology</h3>
+      <p>New guides, case studies, and product updates — delivered to your inbox.</p>
+    </div>
+    <div class="nl-form">
+      <input class="nl-input" type="email" placeholder="Your work email" />
+      <button class="nl-btn">Subscribe</button>
+    </div>
+  </div>
+
+</div></div>
+
+<footer>
+  <span style="font-size:13px;font-weight:700;letter-spacing:0.04em;color:rgba(255,255,255,0.85);font-family:'Poppins',sans-serif;">TOGAL<span style="color:#3ab65a;">.AI</span></span>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="footer-copy">© 2026 Togal.AI</div>
+  </div>
+</footer>
+
+
+<!-- ════════════════════════════════════════
+     ARTICLE TEMPLATE — Consigli Case Study
+═════════════════════════════════════════ -->
+
+<div class="page-label">↓ &nbsp; Article Template — Consigli Case Study &nbsp; ↓</div>
+<div class="article-divider"></div>
+
+<nav>
+  <div style="display:flex;align-items:center;gap:7px;">
+  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2 2h4v2H4v4H2V2zm14 0h4v6h-2V4h-2V2zM2 14h2v4h4v2H2v-6zm16 4h-4v2h6v-6h-2v4z" fill="#3ab65a"/>
+    <rect x="5" y="5" width="12" height="12" rx="1" stroke="#114a2a" stroke-width="1.5" fill="none"/>
+    <rect x="8" y="8" width="2.5" height="6" fill="#114a2a"/>
+    <rect x="11.5" y="8" width="2.5" height="6" fill="#114a2a"/>
+    <rect x="8" y="8" width="6" height="2" fill="#114a2a"/>
+  </svg>
+  <span style="font-size:15px;font-weight:700;letter-spacing:0.04em;color:#fff;font-family:'Poppins',sans-serif;">TOGAL<span style="color:#3ab65a;">.AI</span></span>
+</div>
+  <div class="nav-links">
+    <a href="#">Features</a>
+    <a href="#">Trades</a>
+    <a href="#">Resources</a>
+    <a href="#">Pricing</a>
+  </div>
+  <button class="demo-btn">Get a demo</button>
+</nav>
+
+<div class="article-page" id="article"><div class="article-page-inner">
+  <div class="article-breadcrumb">
+    <a href="#">Blog</a>
+    <span class="bc-sep">›</span>
+    <a href="#">Case Studies</a>
+    <span class="bc-sep">›</span>
+    <span>Consigli Uses Togal.AI for Takeoffs at Scale</span>
+  </div>
+
+  <div class="article-layout">
+
+    <!-- MAIN ARTICLE -->
+    <div class="article-main">
+      <div class="article-category-tag">Case Study</div>
+      <h1 class="article-title">Consigli Uses Togal.AI for Takeoffs at Scale</h1>
+      <p class="article-lede">A fifth-generation general contractor with 80–100 estimators across 15+ offices needed real-time collaboration on complex bids. Togal changed how they work — and what they can win.</p>
+      <div class="article-meta-bar">
+        <span class="art-meta-item">Consigli Construction Co., Inc.</span>
+        <span class="art-meta-dot"></span>
+        <span class="art-meta-item">Enterprise</span>
+        <span class="art-meta-dot"></span>
+        <span class="art-meta-item">5 min read</span>
+      </div>
+
+      <div class="article-hero-img">
+        <span class="article-hero-img-label">Consigli Construction — project site photography</span>
+      </div>
+
+      <div class="article-stat-row">
+        <div class="article-stat-card">
+          <div class="art-stat-num">$4B+</div>
+          <div class="art-stat-label">Annual construction volume</div>
+        </div>
+        <div class="article-stat-card">
+          <div class="art-stat-num">80–100</div>
+          <div class="art-stat-label">Estimators on one platform</div>
+        </div>
+        <div class="article-stat-card">
+          <div class="art-stat-num">15+</div>
+          <div class="art-stat-label">Offices across North America</div>
+        </div>
+      </div>
+
+      <div class="article-body">
+        <p>Enterprise estimating doesn't break because teams are slow. It breaks because they're spread out — multiple estimators working on the same project from different locations, reviewing each other's work without a shared environment, and trying to stay aligned under tight deadlines.</p>
+        <p>That was Consigli's challenge. A fifth-generation, family-run construction manager operating across more than 15 offices, Consigli regularly collaborates across regions on large, complex projects. Their estimating team — 80 to 100 professionals — needed to work in parallel without stepping on each other's work.</p>
+
+        <h2>Where legacy takeoff tools fall short at enterprise scale</h2>
+        <p>Before Togal.AI, Consigli used On-Screen Takeoff. For Chief Estimator Tim Ericson, the tool had been a constant for 25 years. But as the team scaled and projects grew more complex, the limitations compounded.</p>
+
+        <div class="article-pullquote">
+          <p>"Before Togal.AI, we used On-Screen Takeoff. I personally have been using it for 25 years. While On-Screen Takeoff did what we needed it to do, we didn't see it making any fundamental changes."</p>
+          <cite>Tim Ericson, Chief Estimator — Consigli Construction</cite>
+        </div>
+
+        <p>Estimators in headquarters performed well. But remote teams faced lag, delays, and friction completing basic takeoff tasks. On large projects, multiple estimators working simultaneously led to fragmented workflows — harder to maintain alignment, avoid duplication, and ensure complete scope coverage.</p>
+
+        <h2>Cloud-based takeoff for a more collaborative model</h2>
+        <p>Consigli wasn't looking for a marginally better version of what they had. They were looking for a different way to work — and that's what led them to Togal.AI.</p>
+        <p>Because Togal.AI is cloud-based, every estimator works in the same environment regardless of location. No remote desktop reliance, no performance gaps between offices, no inconsistency in user experience. Multiple estimators can operate in the same project simultaneously — reviewing each other's work, coordinating in real time, staying aligned as the estimate evolves.</p>
+
+        <div class="article-pullquote">
+          <p>"Our estimating group has around 80 to 100 individuals. And any one of us is utilizing Togal.AI at any given moment. We really see web-based applications as the wave of the future."</p>
+          <cite>Tim Ericson, Chief Estimator — Consigli Construction</cite>
+        </div>
+
+        <h2>Estimators focused on thinking, not clicking</h2>
+        <p>The most meaningful shift wasn't faster takeoffs. It was what faster takeoffs made possible. Reducing repetitive clicking freed estimators to focus on higher-value work: understanding the drawings, identifying risks, building a more complete picture of the project.</p>
+        <p>The result is a smarter, more comprehensive estimate — and greater confidence in the final numbers.</p>
+
+        <h2>Building credibility in preconstruction</h2>
+        <p>The impact carries beyond the estimating team. In reconciliation meetings with partners, owners, and subcontractors, Consigli teams can quickly surface their takeoffs, walk through decisions, and clearly explain how quantities were derived.</p>
+
+        <div class="article-pullquote">
+          <p>"We're able to pull it up and show them what we did and why we did it. It gives us a lot more credibility."</p>
+          <cite>Tim Ericson, Chief Estimator — Consigli Construction</cite>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="article-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-label">Request a demo</div>
+        <p>See how Togal.AI handles your specific project type and estimating workflow.</p>
+        <a href="#" class="sidebar-cta-btn green">Get a demo</a>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-label">In this article</div>
+        <div class="toc-item"><span class="toc-num">01</span>Where legacy tools fall short</div>
+        <div class="toc-item"><span class="toc-num">02</span>Cloud-based collaboration</div>
+        <div class="toc-item"><span class="toc-num">03</span>Estimators focused on thinking</div>
+        <div class="toc-item"><span class="toc-num">04</span>Building credibility in preconstruction</div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-label">Related reading</div>
+        <div class="related-post">
+          <div class="related-tag">Guide</div>
+          <div class="related-title">How To Never Miss Scope: 3 Patterns Every Estimator Should Check</div>
+          <div class="related-meta">5–6 min read</div>
+        </div>
+        <div class="related-post">
+          <div class="related-tag">Industry</div>
+          <div class="related-title">AI or BS? What's Actually Real in Construction AI</div>
+          <div class="related-meta">5–7 min read</div>
+        </div>
+        <div class="related-post">
+          <div class="related-tag">Guide</div>
+          <div class="related-title">Better Takeoffs, Better Workdays: AI Takeoff Software Reducing Estimator Burnout</div>
+          <div class="related-meta">4–5 min read</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <span style="font-size:13px;font-weight:700;letter-spacing:0.04em;color:rgba(255,255,255,0.85);font-family:'Poppins',sans-serif;">TOGAL<span style="color:#3ab65a;">.AI</span></span>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="footer-copy">© 2026 Togal.AI</div>
+  </div>
+</footer>
+
+</body>
+</html>
