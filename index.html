@@ -95,18 +95,18 @@ nav {
 
 /* ── FEATURED HERO ── */
 .featured-wrap {
-  background: #26294e;
+  background-color: #26294e;
   background-image: url('consigli-hero.jpg');
-  background-size: 480px auto;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: center center;
   position: relative;
 }
 .featured-wrap::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, #26294e 55%, rgba(38,41,78,0.7) 75%, rgba(38,41,78,0.3) 100%);
+  background: linear-gradient(to right, #26294e 45%, rgba(38,41,78,0.85) 65%, rgba(38,41,78,0.4) 100%);
   pointer-events: none;
 }
 .featured-wrap-inner {
@@ -117,7 +117,7 @@ nav {
   z-index: 1;
 }
 .featured-content {
-  max-width: 600px;
+  max-width: 580px;
 }
 .featured-image { display: none; }
 
